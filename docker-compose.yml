@@ -1,0 +1,14 @@
+version: '3.6'
+services:
+  jss:
+    build:
+      context: ./jss
+      dockerfile: Dockerfile
+    environment:
+      CHOKIDAR_USEPOLLING: 'true'
+    ports:
+      - 3000:3000
+    volumes:
+      - /usr/src/app/node_modules
+      - ./jss:/usr/src/app
+      - C:\inetpub\wwwroot\sc910\Website:/usr/src/website
